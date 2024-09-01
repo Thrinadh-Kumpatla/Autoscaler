@@ -88,7 +88,7 @@ Example:
 go run cmd/auto-scaler/main.go --port 8123 --target-cpu 0.75 --check-interval 15s
 ```
 
-This example starts the auto-scaler, targeting a CPU utilization of 75% and checking every 15 seconds.
+This example starts the auto-scaler, targeting a CPU utilization of 75% and checking every 15 seconds for the application that needs scaling and exposing 8123 Port.
 
 ## Configuration
 
