@@ -29,8 +29,7 @@ The auto-scaler is a lightweight Go application that dynamically scales the numb
 ```
 .
 ├── cmd
-│   └── auto-scaler
-│       └── main.go               # Entry point of the application
+│   └── main.go                   # Entry point of the application
 ├── internal
 │   ├── api
 │   │   └── client.go             # API client for interacting with the target application
@@ -44,7 +43,7 @@ The auto-scaler is a lightweight Go application that dynamically scales the numb
 
 ### Key Components
 
-- **`cmd/auto-scaler/main.go`**: The main entry point of the application. Handles initialization and starts the auto-scaling process.
+- **`cmd/main.go`**: The main entry point of the application. Handles initialization and starts the auto-scaling process.
 - **`internal/config/config.go`**: Contains configuration management logic, including parsing command-line flags.
 - **`internal/api/client.go`**: Defines a simple API client to interact with the target application to retrieve metrics and update replicas.
 - **`internal/scaler/scaler.go`**: Implements the core logic for checking CPU utilization and adjusting the number of replicas.
@@ -56,8 +55,8 @@ To install the application, ensure you have Go installed on your system. You can
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/Thrinadh-Kumpatla/auto-scaler.git
-    cd auto-scaler
+    git clone https://github.com/Thrinadh-Kumpatla/Autoscaler.git
+    cd Autoscaler
     ```
 
 2. Install dependencies:
@@ -85,7 +84,7 @@ go run cmd/auto-scaler/main.go [flags]
 Example:
 
 ```sh
-go run cmd/auto-scaler/main.go --port 8123 --target-cpu 0.75 --check-interval 15s
+go run cmd/main.go --port 8123 --target-cpu 0.75 --check-interval 15s
 ```
 
 This example starts the auto-scaler, targeting a CPU utilization of 75% and checking every 15 seconds for the application that needs scaling and exposing 8123 Port.
@@ -103,7 +102,7 @@ The application can be configured using command-line flags:
 To build the application, use the Go build command:
 
 ```sh
-go build -o auto-scaler cmd/auto-scaler/main.go
+go build -o auto-scaler cmd/main.go
 ```
 
 This command creates an executable named `auto-scaler` in the current directory.
